@@ -37,7 +37,7 @@ namespace Tyuiu.MolokanovNK.Sprint5.Task1.V15.Lib
 
                 strY = Convert.ToString(y);
 
-                if (x != stopValue - 1)
+                if (x != stopValue )
                 {
                     File.AppendAllText(path, strY + Environment.NewLine);
                 }
