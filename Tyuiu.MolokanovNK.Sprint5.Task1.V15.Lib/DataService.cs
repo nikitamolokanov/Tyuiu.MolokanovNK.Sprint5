@@ -8,34 +8,48 @@ namespace Tyuiu.MolokanovNK.Sprint5.Task1.V15.Lib
     {
         public string SaveToFileTextData(int startValue, int stopValue)
         {
-            double start = -5;
-            double end = 5;
-            double step = 1;
-            string outputFile = "OutPutFileTask1.txt";
 
-            File.WriteAllText(outputFile, "");
+            string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask0.txt");
 
-            
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
 
-            for (double x = start; x <= end; x += step)
+            if (fileExists)
             {
-                double result;
+                File.Delete(path);
+            }
 
+            double y;
+            string strY;
+           
+
+            for (int x = startValue; x < stopValue; x++)
+            {
+                
                 if (Math.Abs(x - 0.4) < 0.000001)
                 {
-                    result = 0;
+                    y = 0;
                 }
                 else
                 {
-                    result = Math.Cos(x) / (x - 0.4) + Math.Sin(x) * 8 * x + 2;
+                    y = Math.Round(Math.Cos(x) / (x - 0.4) + Math.Sin(x) * 8 * x + 2, 2);
                 }
 
-                result = Math.Round(result, 2);
-                File.AppendAllText(outputFile, $"{result}\n");
-                
+                strY = Convert.ToString(y);
+
+                if (x != stopValue - 1)
+                {
+                    File.AppendAllText(path, strY + Environment.NewLine);
+                }
+                else
+                {
+                    File.AppendAllText(path, strY);
+                }
             }
 
-            
+            return path;
+
+
 
         }
     }
