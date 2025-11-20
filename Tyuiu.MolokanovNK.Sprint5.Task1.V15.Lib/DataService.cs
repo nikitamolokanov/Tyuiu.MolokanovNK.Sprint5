@@ -23,7 +23,7 @@ namespace Tyuiu.MolokanovNK.Sprint5.Task1.V15.Lib
             string strY;
            
 
-            for (int x = startValue; x < stopValue; x++)
+            for (int x = startValue; x <= stopValue; x++)
             {
                 
                 if (Math.Abs(x - 0.4) < 0.000001)
