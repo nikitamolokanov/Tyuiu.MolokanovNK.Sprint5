@@ -11,8 +11,9 @@ namespace Tyuiu.MolokanovNK.Sprint5.Task4.V17.Lib
             string strX = File.ReadAllText(path);
 
             double x = 4.68;
-            double res = Math.Round(Math.Sin(2/ 3*x) + Math.Pow(x,2),3);
-           
+            double res = Math.Round(Math.Sin(2 / (3 * x)) + Math.Pow(x, 2), 3);
+
+
             return res;
         }
     }
