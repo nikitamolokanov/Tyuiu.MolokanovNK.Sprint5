@@ -1,5 +1,4 @@
-﻿using Tyuiu.MolokanovNK.Sprint5.Task4.V17.Lib;
-
+﻿using Tyuiu.MolokanovNK.Sprint5.Task5.V4.Lib;
 
 DataService ds = new DataService();
 
@@ -23,7 +22,7 @@ Console.WriteLine("*************************************************************
 Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
 Console.WriteLine("***************************************************************************");
 
-string path = @"C:\DataSprint5\InPutDataFileTask4V17.txt";
+string path = @"C:\DataSprint5\InPutDataFileTask5V4.txt";
 
 Console.WriteLine("Данные находятся в файле: " + path);
 
@@ -39,4 +38,4 @@ Console.ReadKey();
 
 
 
-Console.ReadKey();
+
