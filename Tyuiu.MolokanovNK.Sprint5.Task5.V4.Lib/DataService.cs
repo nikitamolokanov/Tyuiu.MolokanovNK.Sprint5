@@ -1,7 +1,11 @@
-﻿using System.Globalization;
-using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.IO;
 using tyuiu.cources.programming.interfaces.Sprint5;
+using System.Globalization;
 
 namespace Tyuiu.MolokanovNK.Sprint5.Task5.V4.Lib
 {
@@ -9,31 +13,37 @@ namespace Tyuiu.MolokanovNK.Sprint5.Task5.V4.Lib
     {
         public double LoadFromDataFile(string path)
         {
-            double res = 1;
-            using (StreamReader reader = new StreamReader(path))
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    // Разделяем строку на отдельные числа по пробелам
-                    string[] numbers = line.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            double product = 1.0;
+            int realNumberCount = 0;
 
-                    // Обрабатываем каждое число отдельно
-                    foreach (string numberStr in numbers)
+            string fileContent = File.ReadAllText(path);
+            string[] numbers = fileContent.Split(new char[] { ' ', ',', '\t', '\n', '\r' },
+                                        StringSplitOptions.RemoveEmptyEntries);
+
+            
+
+            foreach (string numberStr in numbers)
+            {
+                if (double.TryParse(numberStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double number))
+                {
+                    
+                    if (Math.Abs(number % 1) > 0.000001) 
                     {
-                        if (double.TryParse(numberStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double number))
-                        {
-                            res *= number;
-                        }
+                        double oldProduct = product;
+                        product *= number;
+                        realNumberCount++;
+                        
                     }
+                    
+                    
+                       
+                    
                 }
             }
 
             
-            return Math.Round(res, 3);
-        }
-           
+            return Math.Round(product, 3);
 
-        
+        }
     }
 }

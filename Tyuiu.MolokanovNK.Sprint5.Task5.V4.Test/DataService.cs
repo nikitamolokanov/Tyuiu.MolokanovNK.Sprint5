@@ -15,6 +15,7 @@ namespace Tyuiu.MolokanovNK.Sprint5.Task5.V4.Test
             bool wait = true;
             Assert.AreEqual(wait, fileExists);
             File.Delete(path);
+
         }
     }
 }
