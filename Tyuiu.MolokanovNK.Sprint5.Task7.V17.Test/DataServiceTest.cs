@@ -1,5 +1,6 @@
-﻿using Tyuiu.MolokanovNK.Sprint5.Task7.V17.Lib;
-using System.IO;
+﻿using System.IO;
+using Tyuiu.MolokanovNK.Sprint5.Task7.V17.Lib;
+
 
 
 namespace Tyuiu.MolokanovNK.Sprint5.Task7.V17.Test
@@ -10,7 +11,7 @@ namespace Tyuiu.MolokanovNK.Sprint5.Task7.V17.Test
         [TestMethod]
         public void TestMethod1()
         {
-            string path = @"С:\DataSprint5\OutPutDataFileTask7V17.txt ";
+            string path = @"C:\DataSprint5\InPutDataFileTask7V17.txt";
             FileInfo fileInfo = new FileInfo(path);
             bool fileExists = fileInfo.Exists;
             bool wait = true;

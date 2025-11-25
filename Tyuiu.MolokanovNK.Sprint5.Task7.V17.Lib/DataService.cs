@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using System.IO;
 using tyuiu.cources.programming.interfaces.Sprint5;
-using System.Globalization;
+
 
 namespace Tyuiu.MolokanovNK.Sprint5.Task7.V17.Lib
 {

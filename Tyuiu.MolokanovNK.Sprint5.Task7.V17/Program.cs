@@ -1,4 +1,5 @@
-﻿using Tyuiu.MolokanovNK.Sprint5.Task7.V17.Lib;
+﻿using System.IO;
+using Tyuiu.MolokanovNK.Sprint5.Task7.V17.Lib;
 
 DataService ds = new DataService();
 Console.Title = "Спринт #5 | Выполнил: Молоканов Н. К. | ПКТб-23-2";
@@ -17,13 +18,11 @@ Console.WriteLine("*************************************************************
 Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
 Console.WriteLine("***************************************************************************");
 string path = @"C:\DataSprint5\InPutDataFileTask7V17.txt";
-string pathSaveFile = @"C:\DataSprint5\OutPutDataFileTask7V17.txt";
 Console.WriteLine("Данные находятся в файле: " + path);
 
 Console.WriteLine("***************************************************************************");
 Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
 Console.WriteLine("***************************************************************************");
 Console.WriteLine("Находится в файле: ");
-pathSaveFile = ds.LoadDataAndSave(path);
-Console.WriteLine(pathSaveFile);
+Console.WriteLine(ds.LoadDataAndSave(path));
 Console.ReadKey();
